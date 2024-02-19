@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+<h2>Add New User </h2>
+<br>
+<form th:method = "POST" th:action = "@{/new_user}" th:object = "${user}">
+    <label for="name">Name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name is not correct</div>
+    <br/>
+    <label for="name">Surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname is not correct</div>
+    <br/>
+    <label for="name">Age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age is not correct</div>
+    <br/>
+    <label for="email">Email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Email is not correct</div>
+    <br/>
+    <input type="submit" value="Add New User"/>
+</form>
+<div class="buttons">
+    <button onclick="window.location.href = '/'">Go to All Users</button>
+</div>
+
+</body>
+</html>
